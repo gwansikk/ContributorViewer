@@ -1,15 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+
+import "./index.css";
 import Main from "./page/main";
+import PreView from "./page/preView";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Main />
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Main />} />
+        <Route path="preview" element={<PreView />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
